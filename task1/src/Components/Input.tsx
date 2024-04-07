@@ -1,16 +1,10 @@
-import {
-  View,
-  TextInput,
-  StyleSheet,
-  ViewStyle,
-  StyleProp,
-} from "react-native";
+import { View, TextInput, StyleSheet } from "react-native";
 import React from "react";
+import { colors } from "../theme/Colors";
 interface IInput {
   value: string;
   setValue: (value: string) => void;
-  placeholder?: string;
-  style?: StyleProp<ViewStyle>;
+  placeholder: string;
   secureTextEntry?: boolean;
 }
 const Input: React.FC<IInput> = ({
@@ -25,7 +19,7 @@ const Input: React.FC<IInput> = ({
         onChangeText={setValue}
         value={value}
         placeholder={placeholder}
-        placeholderTextColor={"white"}
+        placeholderTextColor={colors.white}
         secureTextEntry={secureTextEntry}
       />
     </View>
@@ -33,10 +27,10 @@ const Input: React.FC<IInput> = ({
 };
 const styles = StyleSheet.create({
   main: {
+    width: 100,
     borderWidth: 1,
     borderColor: "grey",
     paddingHorizontal: 10,
-    width: 100,
     paddingVertical: 5,
   },
 });
